@@ -1,0 +1,2 @@
+echo pete | openssl rsautl -encrypt -inkey rsa.public -pubin > text.rsa
+openssl rsautl -decrypt -inkey rsa.private -in text.rsa
