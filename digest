@@ -1,0 +1,2 @@
+echo "digest" | sha256sum
+echo "Digest" | sha256sum
