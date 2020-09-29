@@ -1,2 +1,5 @@
-echo pete | openssl rsautl -encrypt -inkey rsa.public -pubin > text.rsa
-openssl rsautl -decrypt -inkey rsa.private -in text.rsa
+echo "public => private" | openssl rsautl -encrypt -inkey rsa.public -pubin > text1.rsa
+openssl rsautl -decrypt -inkey rsa.private -in text1.rsa
+
+echo "private => public" | openssl rsautl -sign -inkey rsa.private > text2.rsa
+openssl rsautl -verify -inkey rsa.public -pubin -in text2.rsa
