@@ -17,3 +17,9 @@
 
 curl -s http://cacerts.digicert.com/DigiCertSHA2ExtendedValidationServerCA.crt \
    | openssl x509 -text -noout -inform der
+
+echo 
+
+# Follow the chain
+
+echo 'GET /' | openssl s_client -showcerts -connect www.bt.com:443 > /dev/null
