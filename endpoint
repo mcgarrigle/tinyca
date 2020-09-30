@@ -1,1 +1,3 @@
+#!/bin/bash
+
 echo 'GET /' | openssl s_client -showcerts -connect www.bt.com:443 | openssl x509 -text -noout

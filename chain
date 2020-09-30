@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Subject: businessCategory = Private Organization, 
+#          jurisdictionC = GB, 
+#          serialNumber = 01800000,
+#          C = GB,
+#          L = LONDON,
+#          O = British Telecommunications plc,
+#          OU = Technology,
+#          CN = www.bt.com
+
+# Issuer: C = US, O = DigiCert Inc, OU = www.digicert.com, CN = DigiCert SHA2 Extended Validation Server CA
+
+# Authority Information Access:
+#   OCSP - URI:http://ocsp.digicert.com
+#   CA Issuers - URI:http://cacerts.digicert.com/DigiCertSHA2ExtendedValidationServerCA.crt
+
+curl -s http://cacerts.digicert.com/DigiCertSHA2ExtendedValidationServerCA.crt \
+   | openssl x509 -text -noout -inform der

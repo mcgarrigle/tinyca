@@ -1,2 +1,9 @@
+#!/bin/bash
+
+# genrsa creates what is called a private key
+
 openssl genrsa -out rsa.private 1024
+
+# the 'private' key file contains enough info to regenerate the public key
+
 openssl rsa -in rsa.private -out rsa.public -pubout

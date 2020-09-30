@@ -1,5 +1,11 @@
+#!/bin/bash
+
+# usign public key to encrypt is an openssl 'encrypt' operation and 'decrypt' is the opposite
+
 echo "public => private" | openssl rsautl -encrypt -inkey rsa.public -pubin > text1.rsa
 openssl rsautl -decrypt -inkey rsa.private -in text1.rsa
+
+# usign private key to encrypt is an openssl 'sign' operation and 'verify' is the opposite
 
 echo "private => public" | openssl rsautl -sign -inkey rsa.private > text2.rsa
 openssl rsautl -verify -inkey rsa.public -pubin -in text2.rsa
